@@ -1,57 +1,54 @@
 <!DOCTYPE html>
 <html>
-    <body>
-    
-        <h1>dictionnaires</h1>
-        
-        
-        
-        
-        
-        <div id="google_translate_element"></div>
-         <script type="text/javascript">
-            function googleTranslateElementInit() {
-              new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
-            }
-            </script> 
-         <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script> 
-        
-        
-        
-        
-        
-        
-        
-        
-        
-            <ol class = '1'>
-                <li>they are mutable ,iterable and unordered</li>
-                <li>written between {} with keywords being of string type '' and each set is seperated by (,)</li>
-                <li>to create a dict we can use multiple methods : 
-                    <ol class = 'a'>
-                        <li>a = dict('p' = 4 ,'c' = 7) => {'p' : 4 , 'c' : 7}</li>
-                        <li>a = dict({'p' : 4},c = 7) => {'p' : 4 , 'c' : 7}</li>
-                        <li>a = dict([(p,7),(c,4)]) => {'p' : 4 , 'c' : 7}</li>
-                        <li>a = dict('p' = 4 ,'c' = 7) => {'p' : 4 , 'c' : 7}</li>
-                        <li>a = [p,c]"list of keys" , b = [4,7]'list of values' --->dic = dict(zip(a,b)) => {'p' : 4 , 'c' : 7}</li>
-                        
-                    </ol>
-                    
-                    
-                    
-                </li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ol>
-        
+  <body>
+    <h1>dictionnaires</h1>
+    <div id="google_translate_element"></div>
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+          pageLanguage: 'en'
+        }, 'google_translate_element');
+      }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <ol class='1'>
+      <li>they are mutable ,iterable and unordered</li>
+      <br>
+      <li>written between {} with keywords being of string type '' and each set is seperated by (,)</li>
+      <br>
+      <li>to create a dict we can use multiple methods : </li>
+      <ol class='a'>
+        <li>a = dict(p = 4 ,c = 7) => {'p' : 4 , 'c' : 7}</li>
+        <li>a = dict({'p' : 4},c = 7) => {'p' : 4 , 'c' : 7}</li>
+        <li>a = dict([(p,7),(c,4)]) => {'p' : 4 , 'c' : 7}</li>
+        <li>a = [p,c]"list of keys" , b = [4,7]'list of values' --->dic = dict(zip(a,b)) => {'p' : 4 , 'c' : 7}</li>
+        <li>!!! note : with zip method both arguments need to be of the same length if not use ( zip(list,[None]*len(dic) )</li>
+        <br>
+      </ol>
+      <li>to create a copy of dict we use : a = dict(c) or a= c.copy() or a = c + {}</li>
+      <br>
+      <li>dic["key"] = value -->changes the value of an existing key or adds one(functions as append) <br>- del a ["c"] deletes the specified key alongside its value (works as pop) </li>
+      <br>
+      <li>a.keys() gives an iterable containing all keys of dictionnary(we can use 'in' to iterate the values of a dictionnary)(repetiotion matters)</li><br>
+      <li>a.values() does the same thing as above,it just gives values instead(repetition doesn't affect it)</li><br>
+      <li>when accessing a value in a dict the way python works is from right to left example : a={'r':1,'r':2,'r':0} -->print()-->{'r':0}</li><br>
+      <li>a.items() gives tuples of (key,value) we can use 'for e,i in a.items()'</li><br>
+      <li>a.get(key,value) if key is in dictionnary a then it returns the value associated to it ,if not it returns the value in the second arguiment example : a={'r':1},a.get('r',4) = 1,a.get('y',4)=4,a.get('y')=None</li><br>
+      <li>a.setdefault(key,value) it works the same as above but instead of giving the value it creates a ney key example : a.setdefault('r',4) = 1,a.setdefault('y',4) = 4 and --->a={'r':1,'y':4}</li><br>
+      <li>a,b=b,a / a,r=(1,2)/ functions stops when metting first 'return'</li><br>
+      <li>a.fromkeys(iterable containing keys,the value to assign to all keys) example : dict.fromkeys(a,12)--> {'r':12}</li><br>
+      <li>a.clear() --> renders dictionnary empty</li><br>
+      <li>a.has_key(key) returns true if key is in dictionnary,false otherwise</li><br>
+      <li>
+      sort_orders = sorted(dict.items(), key=lambda x: x[1], reverse=True)<br>
+        c ={}<br>
+        for i,e in sort_orders:<br>
+	         &nbsp; &nbsp; c[i] = e<br>
+        print(c)<br>
+      </li><br>
+      <li>a.pop(key,default value) deltes elements from dict and returns its value,if it is not in dict it returns default value example : a.pop('r',4) = 1 and a ={},//,a.pop('rt',4) = 4 and a ={'r':1}</li>
+      <li>str(dict) retruns string version of dictionnary</li>
+      <li>cmp(dict1,dict2) compares between two dictionnaries (returns : -1 if dict1<dict2,1 if otherwise,0 if equal) it compares between keys and values alike</li>
+    </ol>
+  </body>
+  <html>
